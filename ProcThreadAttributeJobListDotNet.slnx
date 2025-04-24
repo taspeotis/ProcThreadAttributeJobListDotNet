@@ -1,0 +1,12 @@
+﻿<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+    <File Path=".github\workflows\main.yml" />
+    <File Path="Directory.Build.props" />
+  </Folder>
+  <Project Path="ProcThreadAttributeJobListDotNet.IntegrationTests\ProcThreadAttributeJobListDotNet.IntegrationTests.csproj" Type="Classic C#" />
+  <Project Path="ProcThreadAttributeJobListDotNet\ProcThreadAttributeJobListDotNet.csproj" Type="Classic C#" />
+</Solution>

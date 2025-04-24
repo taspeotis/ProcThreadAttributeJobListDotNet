@@ -1,0 +1,23 @@
+name: ProcThreadAttributeJobListDotNet
+
+on: [ push, workflow_dispatch ]
+
+jobs:
+  test-and-pack:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.x'
+
+      - run: dotnet test
+
+      # https://github.com/dotnet/sourcelink/blob/main/docs/README.md#continuousintegrationbuild
+      - run: dotnet pack /p:ContinuousIntegrationBuild=true
+
+      - uses: actions/upload-artifact@v4
+        with:
+          path: 'artifacts/package/release/ProcThreadAttributeJobListDotNet.*.nupkg'
+          name: 'ProcThreadAttributeJobListDotNet.nupkg'
